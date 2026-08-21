@@ -1,127 +1,214 @@
-Credit Card Anomaly Detection using Isolation Forest
-🚀 Project Overview
+# 💳 Credit Card Transaction Anomaly Detection using Isolation Forest
 
-This project implements an Unsupervised Machine Learning solution for detecting suspicious and unusual credit-card transactions using the Isolation Forest algorithm.
+An industry-level Unsupervised Machine Learning project that detects anomalous (potentially fraudulent) credit card transactions using the **Isolation Forest** algorithm.
 
-The main objective is to identify transactions that behave differently from normal transactions based on factors such as transaction amount, transaction time, distance from home, merchant risk, transaction frequency, device changes, failed attempts, and international activity.
+---
 
-Machine Learning Type: Unsupervised Learning
-Algorithm: Isolation Forest
-Domain: Banking & Financial Fraud Detection
-Project Level: Industry-Oriented
+## 📌 Project Overview
 
-🎯 Business Problem
+Credit card fraud is one of the biggest challenges faced by financial institutions. Since fraudulent transactions are rare and often unlabeled, **Isolation Forest**, an unsupervised anomaly detection algorithm, is an effective solution.
 
-Credit-card fraud is difficult to detect because fraudulent transactions are usually a very small percentage of all transactions.
+This project demonstrates an end-to-end machine learning pipeline including:
 
-Traditional supervised machine-learning models require a large amount of accurately labeled fraud data. In many real-world situations, such labels are limited or unavailable.
+- Data preprocessing
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Isolation Forest model training
+- Anomaly detection
+- Model evaluation
+- Data visualization
+- Model saving & loading
+- Predicting anomalies on new transactions
 
-Isolation Forest provides an effective solution by identifying observations that are significantly different from the majority of transactions.
+---
 
-Business Goal
+## 🎯 Objectives
 
-Detect potentially suspicious transactions early so that they can be reviewed, blocked, or subjected to additional authentication.
+- Detect unusual credit card transactions.
+- Build a scalable anomaly detection system.
+- Reduce financial fraud using machine learning.
+- Demonstrate an industry-level ML workflow.
 
-💡 Solution
+---
 
-The project uses Isolation Forest, an anomaly-detection algorithm that isolates unusual observations.
+## 🛠️ Technologies Used
 
-The model analyzes transaction behavior and generates:
+- Python
+- Jupyter Notebook
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Joblib
 
-🟢 Normal Transaction
-🔴 Anomalous / High-Risk Transaction
-📊 Anomaly Score
+---
 
-A higher anomaly score indicates that the transaction is more unusual compared with normal transaction behavior.
+## 📂 Project Structure
 
-🧠 Why Isolation Forest?
+```
+├── Isolation_Forest_Credit_Card_Anomaly_Detection.ipynb
+├── dataset/
+│   └── creditcard.csv
+├── models/
+│   └── isolation_forest.pkl
+├── images/
+├── README.md
+└── requirements.txt
+```
 
-Isolation Forest is particularly useful for anomaly detection because:
+---
 
-It does not require fraud labels for training.
-It works well with high-dimensional datasets.
-It is computationally efficient.
-It can detect unusual patterns automatically.
-It is suitable for large-scale anomaly detection.
-It can identify rare observations without manually defining every fraud rule.
-📊 Dataset
+## ⚙️ Machine Learning Workflow
 
-The project uses a realistic synthetic credit-card transaction dataset.
+1. Import libraries
+2. Load dataset
+3. Data cleaning
+4. Exploratory Data Analysis
+5. Feature Engineering
+6. Train Isolation Forest model
+7. Generate anomaly scores
+8. Evaluate model performance
+9. Visualize anomalies
+10. Save trained model
+11. Predict anomalies on new transactions
 
-Dataset Size
-10,000 transactions
-9,500 normal transactions
-500 anomalous transactions
-Features
-Feature	Description
-transaction_id	Unique transaction identifier
-transaction_amount	Amount of the transaction
-transaction_hour	Hour when transaction occurred
-distance_from_home_km	Distance between transaction location and customer's home
-merchant_risk_score	Risk score of merchant
-transactions_last_24h	Number of transactions in previous 24 hours
-device_change_count	Number of recent device changes
-account_age_days	Age of customer account
-failed_attempts	Number of failed transaction attempts
-international_transaction	Whether transaction was international
-transaction_datetime	Transaction date and time
-actual_anomaly	Synthetic ground-truth label for evaluation
-🔄 Project Workflow
-Raw Transaction Data
-        ↓
-Data Loading
-        ↓
-Data Quality Checks
-        ↓
-Exploratory Data Analysis
-        ↓
-Feature Engineering
-        ↓
-Feature Scaling
-        ↓
-Isolation Forest
-        ↓
-Anomaly Prediction
-        ↓
-Anomaly Score
-        ↓
-Visualization
-        ↓
-Model Evaluation
-        ↓
-Business Recommendations
-🛠️ Technologies Used
-Programming Language
-Python
-Libraries
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
-Joblib
-Machine Learning
-Isolation Forest
-StandardScaler
-Classification Report
-Confusion Matrix
-ROC-AUC
-📈 Exploratory Data Analysis
+---
 
-The project performs several EDA activities including:
+## 📊 Algorithm Used
 
-1. Transaction Amount Distribution
+### Isolation Forest
 
-Analyzes the distribution of transaction amounts and identifies unusual values.
+Isolation Forest is an unsupervised anomaly detection algorithm that works by randomly partitioning data points.
 
-2. Transaction Amount Box Plot
+**Advantages**
+- Fast on large datasets
+- Works without labeled data
+- Handles high-dimensional features
+- Suitable for fraud detection
 
-Helps identify extreme transaction amounts.
+---
 
-3. Transactions by Hour
+## 📈 Model Output
 
-Analyzes transaction activity throughout the day.
+The model classifies transactions into:
 
-4. Correlation Heatmap
+| Prediction | Meaning |
+|------------|---------|
+| 1 | Normal Transaction |
+| -1 | Anomalous / Fraudulent Transaction |
 
-Shows relationships between numerical transaction features.
+---
+
+## 📊 Visualizations Included
+
+- Distribution plots
+- Correlation heatmap
+- Transaction amount distribution
+- Anomaly distribution
+- Scatter plots
+- Feature analysis
+
+---
+
+## 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/yourusername/Credit-Card-Anomaly-Detection.git
+```
+
+Move into the project
+
+```bash
+cd Credit-Card-Anomaly-Detection
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Launch Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+---
+
+## ▶️ How to Run
+
+1. Open the notebook.
+2. Execute cells sequentially.
+3. Train the Isolation Forest model.
+4. Detect anomalous transactions.
+5. Save the trained model.
+
+---
+
+## 📦 Requirements
+
+```
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+joblib
+jupyter
+```
+
+---
+
+## 💼 Business Applications
+
+- Banking
+- Credit Card Fraud Detection
+- Financial Risk Analysis
+- Insurance Fraud Detection
+- Cybersecurity
+- Intrusion Detection
+- Network Security
+- E-commerce Payment Monitoring
+
+---
+
+## 📚 Learning Outcomes
+
+This project demonstrates:
+
+- Unsupervised Machine Learning
+- Anomaly Detection
+- Isolation Forest
+- Data Visualization
+- Feature Engineering
+- Model Persistence
+- Real-world Fraud Detection Pipeline
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Adarsh Tiwari**
+
+If you found this project helpful, consider giving it a ⭐ on GitHub!
